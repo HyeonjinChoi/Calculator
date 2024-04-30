@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    public List<Integer> resultList = new ArrayList<>();       // 연산 결과를 저장하는 리스트
+    private List<Integer> resultList = new ArrayList<>();       // 연산 결과를 저장하는 리스트
 
     /**
      *
@@ -32,5 +32,15 @@ public class Calculator {
             }
             default -> throw new ArithmeticException("사칙연산 기호를 입력하세요.");                   // 잘못된 연산자일 경우 예외 발생
         }
+    }
+
+    /* resultList에 대한 Getter 메서드 */
+    public List<Integer> getResultList() {
+        return this.resultList;
+    }
+
+    /* resultList에 대한 Setter 메서드 */
+    public void setResultList(int result) {
+        this.resultList.add(result);
     }
 }

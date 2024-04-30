@@ -1,7 +1,5 @@
 package calculator;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -22,7 +20,11 @@ public class App {
             char operator = sc.next().charAt(0);
 
             /* Calculator 클래스의 리스트 필드에 연산 결과 저장 */
-            calculator.resultList.add(calculator.calculate(firstNum, secondNum, operator));
+            try {
+                calculator.setResultList(calculator.calculate(firstNum, secondNum, operator));
+            } catch (ArithmeticException e) {
+                System.out.println(e.getMessage());
+            }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             /* exit을 입력 받으면 반복 종료 */
