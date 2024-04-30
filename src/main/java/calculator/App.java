@@ -48,8 +48,23 @@ public class App {
             }
 
             System.out.println("결과: " + result);
-            /* 연산 결과 배열에 저장 (최대 10개) */
-            numArr[index++] = result;
+            /*
+             * 연산 결과 배열에 저장
+             * 열산 결과의 개수가 10개를 초과할 경우, index가 하나씩 당겨짐
+             * 가장 먼저 저장된 결과는 삭제, 가장 마지막에 저장된 결과는 index: 9
+             */
+            if (index > 9) {
+                for (int i = 1; i < 10; i++) {
+                    numArr[i - 1] = numArr[i];
+                }
+                numArr[9] = result;
+            } else {
+                numArr[index++] = result;
+            }
+
+            for (int i : numArr) {
+                System.out.print(i + " ");
+            }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             /* exit을 입력 받으면 반복 종료 */
