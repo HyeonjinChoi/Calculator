@@ -8,6 +8,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int firstNum, secondNum;
         char operator;
+        int result = 0;
 
         System.out.print("첫 번째 숫자를 입력하세요: ");
         // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
@@ -18,5 +19,27 @@ public class App {
         System.out.print("사칙연산 기호를 입력하세요: ");
         // 사칙연산 기호를 적합한 타입으로 선언한 변수에 저장합니다.
         operator = sc.next().charAt(0);
+
+        // switch를 활용하여 사칙연산 수행
+        switch (operator) {
+            case '+' :
+                result = firstNum + secondNum;
+                break;
+            case '-' :
+                result = firstNum - secondNum;
+                break;
+            case '*' :
+                result = firstNum * secondNum;
+                break;
+            case '/' :
+                if (secondNum == 0) {
+                    System.out.println("0으로 나눌 수 없습니다.");
+                } else {
+                    result = firstNum / secondNum;
+                }
+                break;
+            default:
+                System.out.println("사칙연산 기호를 입력하세요.");
+        }
     }
 }
