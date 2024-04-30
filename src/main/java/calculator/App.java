@@ -30,6 +30,10 @@ public class App {
             /* remove를 입력 받으면 리스트의 첫번째 요소 삭제 */
             if (sc.next().equals("remove")) { calculator.removeResult(); }
 
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            /* inquiry를 입력 받으면 리스트의 모든 요소 출력 */
+            if (sc.next().equals("inquiry")) { calculator.inquiryResults(); }
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             /* exit을 입력 받으면 반복 종료 */
             if (sc.next().equals("exit")) { break; }

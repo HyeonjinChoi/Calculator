@@ -38,6 +38,10 @@ public class Calculator {
         this.resultList.remove(0);
     }
 
+    public void inquiryResults() {
+        System.out.println(this.resultList.toString());
+    }
+
     /* resultList에 대한 Getter 메서드 */
     public List<Integer> getResultList() {
         return this.resultList;
