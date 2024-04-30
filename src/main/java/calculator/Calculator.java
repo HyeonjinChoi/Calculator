@@ -34,6 +34,10 @@ public class Calculator {
         }
     }
 
+    public void removeResult() {
+        this.resultList.remove(0);
+    }
+
     /* resultList에 대한 Getter 메서드 */
     public List<Integer> getResultList() {
         return this.resultList;
