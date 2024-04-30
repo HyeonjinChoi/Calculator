@@ -1,12 +1,13 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Calculator calculator = new Calculator();      // Calculator 인스턴스 생성
+        Calculator calculator = new Calculator(new ArrayList<Integer>());      // Calculator 인스턴스 생성
 
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");

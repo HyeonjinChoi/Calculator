@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    private List<Integer> resultList = new ArrayList<>();       // 연산 결과를 저장하는 리스트
+    private List<Integer> resultList;       // 연산 결과를 저장하는 리스트 선
+
+    public Calculator(List<Integer> resultList) {
+        this.resultList = resultList;
+    }
 
     /**
      *
