@@ -55,16 +55,20 @@ public class App {
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             /* remove를 입력 받으면 리스트의 첫번째 요소 삭제 */
             signal = sc.next();
-            if (signal.equals("remove")) {
-                numList.remove(0);
+            if (signal.equals("remove")) { numList.remove(0); }
+
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            /* inquiry를 입력 받으면 리스트의 모든 요소 출력 */
+            signal = sc.next();
+            if (signal.equals("inquiry")) {
+                for (int num : numList) { System.out.print(num + " "); }
+                System.out.println();
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             /* exit을 입력 받으면 반복 종료 */
             signal = sc.next();
-            if (signal.equals("exit")) {
-                break;
-            }
+            if (signal.equals("exit")) { break; }
         }
     }
 }
