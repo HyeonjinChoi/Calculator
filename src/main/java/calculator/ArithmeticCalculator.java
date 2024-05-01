@@ -1,7 +1,7 @@
 package calculator;
 
 public class ArithmeticCalculator extends Calculator {
-    AbstractOperation operation;       // 사칙연산 분리를 위한 추상클래스
+    InterfaceOperation operation;       // 사칙연산 분리를 위한 인터페이스
 
     /**
      *
@@ -26,6 +26,10 @@ public class ArithmeticCalculator extends Calculator {
             }
             case '/' -> {
                 operation = new DivideOperator();       // DivideOperator로 타입 변환
+                return operation.operate(firstNum, secondNum, operator);
+            }
+            case '%' -> {
+                operation = new ModOperator();          // ModOperator로 타입 변환
                 return operation.operate(firstNum, secondNum, operator);
             }
             default -> throw new ArithmeticException("사칙연산 기호를 입력하세요.");    // 잘못된 연산자일 경우 예외 발생
