@@ -1,6 +1,8 @@
 package calculator;
 
 public class ArithmeticCalculator extends Calculator {
+    AbstractOperation operation;       // 사칙연산 분리를 위한 추상클래스
+
     /**
      *
      * @return                         // 연산 결과 반환
@@ -11,19 +13,22 @@ public class ArithmeticCalculator extends Calculator {
         /* switch를 이용하여 사칙연산 수행 */
         switch (operator) {
             case '+' -> {
-                return (double)firstNum + secondNum;
+                operation = new AddOperator();          // AddOperator로 타입 변환
+                return operation.operate(firstNum, secondNum, operator);
             }
             case '-' -> {
-                return (double)firstNum - secondNum;
+                operation = new SubtractOperator();     // SubtractOperator로 타입 변환
+                return operation.operate(firstNum, secondNum, operator);
             }
             case '*' -> {
-                return (double)firstNum * secondNum;
+                operation = new MultiplyOperator();     // MultiplyOperator로 타입 변환
+                return operation.operate(firstNum, secondNum, operator);
             }
             case '/' -> {
-                if (secondNum == 0) { throw new ArithmeticException("0으로 나눌 수 없습니다."); }    // 분모가 0일 경우 예외 발생
-                return (double)firstNum / secondNum;
+                operation = new DivideOperator();       // DivideOperator로 타입 변환
+                return operation.operate(firstNum, secondNum, operator);
             }
-            default -> throw new ArithmeticException("사칙연산 기호를 입력하세요.");                   // 잘못된 연산자일 경우 예외 발생
+            default -> throw new ArithmeticException("사칙연산 기호를 입력하세요.");    // 잘못된 연산자일 경우 예외 발생
         }
     }
 }

@@ -11,6 +11,8 @@ public abstract class Calculator {
     static int firstNum, secondNum;
     static char operator;
     static double radius;
+
+    /* 사칙연산 또는 원의 넓이를 구하는 메서드 */
     public abstract double calculate();
 
     /* arithmeticResult에 대한 Getter 메서드 */
